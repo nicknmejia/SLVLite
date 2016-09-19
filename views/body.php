@@ -2,6 +2,23 @@
 
 $home_controller = new HomeController();
 $home_controller->Init();
+$customizations = ['downvote', 'add-options', 'secret-options', 'time-limit', 'wildcards', 'changes'];
+
+if(isset($_POST['choice1']) && isset($_POST['choice2'])){
+	$choices = [];
+	$options = [];
+	foreach($_POST as $post){
+		if(!is_bool($post)){
+			array_push($choices, $post);
+		}
+		else{
+			array_push($options, $post);
+		}
+	}
+	$voting_controller = new VotingController();
+	$voting_controller->createSLVInstance($choices, $options);
+
+}
 ?>
 
 <?= $home_controller->getHeader() ?>
@@ -13,7 +30,6 @@ $home_controller->Init();
 				<h2 class="new-option-headers">1. Choose your options!</h2>
 				<input name="choice1" data-slot="1" type="text" placeholder="Chipotle">
 				<input name="choice2" data-slot="2" type="text" placeholder="Del Taco">
-				<input name="choice3" data-slot="3" type="text" placeholder="Panda Express">
 			</div>
 			<div class="option-add-button" onclick="addOption()">
 				+ Add More
