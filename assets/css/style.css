@@ -1,0 +1,54 @@
+/*
+    BASE CSS STYLES
+*/
+
+h1{
+    text-transform: uppercase;
+}
+
+.container{
+    max-width: 1000px;
+}
+
+.slv-header{
+    font-family: 'Arial', sans-serif;
+}
+
+.center{
+    text-align: center;
+    margin: auto;
+}
+
+.navigation > div{
+    display: inline-block;
+}
+
+.option-add-button, .option-submit-button{
+    padding: 10px 20px;
+    border: 1px black solid;
+    width:250px;
+    text-align: center;
+    margin: 30px auto;
+    font-size: 1rem;
+}
+
+.option-add-button:hover, .option-submit-button:hover{
+    cursor: pointer;
+}
+
+/*
+    TAB CONTENT CSS
+*/
+.tabcontent{
+    display: none;
+}
+
+/*
+    NEW POLL CSS
+*/
+
+.content-new-option > input{
+    display: block;
+    text-align: center;
+    margin: auto;
+}
