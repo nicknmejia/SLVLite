@@ -21,7 +21,12 @@ function tabToggle(evt, section) {
 
 function addOption(){
     var newInput = document.createElement('input');
+    var lastInput = document.getElementById("options").lastElementChild.getAttribute('data-slot');
+    var newSlot = parseInt(lastInput) + 1;
+    newInput.name = 'choice' + newSlot;
+    newInput.setAttribute('data-slot', newSlot);
     newInput.type = 'text';
     newInput.placeholder = 'FOOD';
+
     document.getElementById('options').appendChild(newInput);
 }

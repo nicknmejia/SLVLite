@@ -52,3 +52,35 @@ h1{
     text-align: center;
     margin: auto;
 }
+
+/*
+    RESULTS CSS
+*/
+.results-col{
+    display: inline-block;
+}
+
+.result{
+    font-family: Arial;
+}
+
+/*
+    SOCIAL MEDIA CSS
+*/
+.icon{
+    height: 75px;
+    width: 75px;
+    border-radius: 25px;
+    display: inline-block;
+    color: white;
+}
+
+#facebook{
+    background-color: dodgerblue;
+}
+#twitter{
+    background-color: cornflowerblue;
+}
+#mail{
+    background-color: firebrick;
+}
