@@ -1,30 +1,24 @@
 <?php
 
 $home_controller = new HomeController();
-$home_controller->Init();
+$instance_controller = new InstanceController();
+
 $customizations = ['downvote', 'add-options', 'secret-options', 'time-limit', 'wildcards', 'changes'];
 
-if(isset($_POST['choice1']) && isset($_POST['choice2'])){
-	$choices = [];
-	$options = [];
-	foreach($_POST as $type => $post){
-		if($post != 'on'){
-			array_push($choices, $post);
-		}
-		else{
-			$options[$type] = $post;
-		}
-	}
-	$voting_controller = new VotingController();
-	$voting_controller->createSLVInstance($choices, $options);
-
+$url_key = $instance_controller->createInstance();
+if(!$url_key){
+	$url_key = $home_controller->getURLKey();
 }
+$slv_instance = $home_controller->getSLVInstance($url_key);
+
+$foo = 'bar';
+
 ?>
 
 <?= $home_controller->getHeader() ?>
 
 <div class="body center">
-	<div id="New" class="tabcontent content-new" <?= ($home_controller->new_poll_start) ? "style='display: block;'" : "" ?>>
+	<div id="New" class="tabcontent content-new" <?= (!is_int($slv_instance['id'])) ? "style='display: block;'" : "" ?>>
 		<form method="post" name="new-poll">
 			<div class="content-new-option" id="options">
 				<h2 class="new-option-headers">1. Choose your options!</h2>
@@ -57,18 +51,24 @@ if(isset($_POST['choice1']) && isset($_POST['choice2'])){
 	</div>
 
 
-	<div id="Current" class="tabcontent content-current" <?= ($home_controller->current_start) ? "style='display: block;'" : "" ?>>
+	<div id="Current" class="tabcontent content-current" <?= (is_int($slv_instance['id'])) ? "style='display: block;'" : "" ?>>
 		<h1>Super Lunch Vote Battle Results</h1>
 		<div class="current-results">
 			<div class="results-col results-option column-half">
-				<div class="result">The Food Compound</div>
-				<div class="result">The Bloated Tick</div>
-				<div class="result">Pho-get about it!</div>
+				<?php foreach($slv_instance['choices'] as $choice){ ?>
+				<div class="result" data-id="<?= $choice->id ?>"><?= $choice->name ?></div>
+				<?php } ?>
 			</div>
 			<div class="results-col results-count column-half">
-				<div class="result">4</div>
-				<div class="result">9</div>
-				<div class="result">1</div>
+				<?php foreach($slv_instance['choices'] as $choice){ ?>
+					<div class="result" data-id="<?= $choice->id ?>">0</div>
+				<?php } ?>
+			</div>
+		</div>
+		<div class="results-share">
+			<h2 class="results-header">Invite friends to the battle with this link</h2>
+			<div class="url-container">
+				slvlite.dev/?slv=<?= $url_key ?>
 			</div>
 		</div>
 	</div>

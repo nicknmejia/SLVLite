@@ -2,23 +2,25 @@
 
 class VotingController{
 
+	public $session;
+
 	public function createSLVInstance($choices, $options){
 		$session_array = [
 			'url_string' => $this->generate_random_string(),
 			'options'    => serialize($options),
 		];
-		$session = new Session($session_array);
-		$session->save();
+		$this->session = new Session($session_array);
+		$this->session->save();
 		foreach($choices as $choice){
 			$choice_array = [
-				'session_id' => $session->id,
+				'session_id' => $this->session->id,
 				'slug'       => strtolower($choice),
 				'name'       => $choice,
 			];
 			$choice = new Choice($choice_array);
 			$choice->save();
 		}
-		return true;
+		return $session_array['url_string'];
 	}
 
 	public function saveVote(){
