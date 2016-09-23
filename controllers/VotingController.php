@@ -1,6 +1,5 @@
 <?php
-include 'models/Session.php';
-include 'models/Choice.php';
+
 class VotingController{
 
 	public function createSLVInstance($choices, $options){
@@ -21,6 +20,24 @@ class VotingController{
 		}
 		return true;
 	}
+
+	public function saveVote(){
+
+	}
+
+	public function removeVote(){
+
+	}
+
+	public function endVoting(){
+
+	}
+
+	public function applyOptions(){
+
+	}
+
+
 
 	private function generate_random_string($length = 15) {
 		$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';

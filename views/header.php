@@ -1,6 +1,6 @@
 <?php
 	// Get some stuff here maybe
-	$quote =HomeController::getSLVQuote();
+	$quote = HomeController::getSLVQuote();
 ?>
 <head>
 	<title>Super Lunch Vote Lite</title>

@@ -1,5 +1,5 @@
 <?php
-include 'models/Quote.php';
+
 class HomeController{
 
 	protected $instance_id;
@@ -28,9 +28,21 @@ class HomeController{
 		return null;
 	}
 
-	public function getVoterInstance(){
-		// TODO: Add SQLite query for getting SLV instance data
-		$data = false;
+	public function getSLVInstance(){
+		$current_votes = [];
+		$instance = Session::find('all', array('conditions' => array('url = ?', $_GET['slv'])));
+		$choices = Choice::find('all', array('conditions' => array('session_id = ?', $instance->id)));
+		foreach($choices as $choice){
+			$current_votes[] = Vote::find('all', array('conditions' => array('choice_id = ?', $choice->id)));
+		}
+
+		$data = [
+			'id' => $instance->id,
+			'options' => $instance->options,
+			'choices' => $choices,
+			'votes'   => $current_votes,
+		];
+
 		return $data;
 	}
 
