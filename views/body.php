@@ -7,12 +7,12 @@ $customizations = ['downvote', 'add-options', 'secret-options', 'time-limit', 'w
 if(isset($_POST['choice1']) && isset($_POST['choice2'])){
 	$choices = [];
 	$options = [];
-	foreach($_POST as $post){
-		if(!is_bool($post)){
+	foreach($_POST as $type => $post){
+		if($post != 'on'){
 			array_push($choices, $post);
 		}
 		else{
-			array_push($options, $post);
+			$options[$type] = $post;
 		}
 	}
 	$voting_controller = new VotingController();

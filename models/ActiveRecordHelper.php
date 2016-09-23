@@ -4,9 +4,8 @@
 	$cfg->set_model_directory( '/' );
 	$cfg->set_connections(
 		array(
-			'development' => 'mysql://root:root@localhost/slv_db',
-			'production'  => 'mysql://username:password@localhost/production_database_name'
+			'sqlite' => 'sqlite://db/SLVL.db',
 		)
 	);
-	$cfg->set_default_connection('development');
+	$cfg->set_default_connection('sqlite');
 } );
