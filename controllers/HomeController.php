@@ -1,5 +1,5 @@
 <?php
-
+include 'models/Quote.php';
 class HomeController{
 
 	protected $instance_id;
@@ -35,9 +35,9 @@ class HomeController{
 	}
 
 	public static function getSLVQuote(){
-		// TODO: Function will pull a random quote from the DB
-		$quote = "\"It's not just for lunch anymore!\"";
-		return $quote;
+		$id = rand(1,15);
+		$quote = Quote::find($id);
+		return $quote->quote;
 	}
 
 }

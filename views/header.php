@@ -13,7 +13,7 @@
 			<div class="titles">
 				<h1 class="title-slv slv-header">Super Lunch Vote</h1>
 				<h1 class="title-lite slv-header">Lite</h1>
-				<h2 class="title-quote slv-header"><?= $quote ?></h2>
+				<h2 class="title-quote slv-header">"<?= $quote ?>"</h2>
 			</div>
 			<div class="navigation">
 				<div class="new-vote tablinks" onclick="tabToggle(event, 'New')">
