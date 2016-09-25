@@ -43,7 +43,7 @@ class InstanceController{
 		$cookie_data = [
 			'user_ip'       => $_SERVER['REMOTE_ADDR'],
 			'voted'         => true,
-			'slv_instance'  => $url_key,
+			'url_key'  => $url_key,
 		];
 
 		setcookie('voted', serialize($cookie_data), time()+60*60*24*30);
