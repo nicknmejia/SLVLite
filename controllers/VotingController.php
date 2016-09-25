@@ -23,20 +23,36 @@ class VotingController{
 		return $session_array['url_string'];
 	}
 
-	public function saveVote(){
-
+	public static function saveVote($choice_id){
+		$vote_exists = Vote::find('all', array('conditions' => array('choice_id = ?', $choice_id)));
+		if(!$vote_exists || empty($vote_exists)) {
+			$vote = new Vote( array(
+				'choice_id' => $choice_id,
+				'count'     => 1
+			) );
+			return $vote->save();
+		}
+		if($vote_exists->count == null){
+			return false;
+		}
+		$new_count = $vote_exists->count + 1;
+		$vote_exists->count = $new_count;
+		$vote_exists->save();
 	}
 
-	public function removeVote(){
-
+	public static function removeVote($choice_id){
+		$vote = Vote::find('all', array('conditions' => array('choice_id = ?', $choice_id)));
+		$new_count = $vote[0]->count - 1;
+		$vote->count = $new_count;
+		$vote->save();
 	}
 
 	public function endVoting(){
-
+		//TODO: Function to disable further voting on an SLV instance
 	}
 
 	public function applyOptions(){
-
+		//TODO: Apply various options to an SLV instance
 	}
 
 

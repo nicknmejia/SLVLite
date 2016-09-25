@@ -7,9 +7,21 @@ $customizations = ['downvote', 'add-options', 'secret-options', 'time-limit', 'w
 
 $url_key = $instance_controller->createInstance();
 if(!$url_key){
-	$url_key = $home_controller->getURLKey();
+	$url_key = ($home_controller->getURLKey()) ? $home_controller->getURLKey() : $_POST['url_key'];
 }
 $slv_instance = $home_controller->getSLVInstance($url_key);
+
+$user_voted = $instance_controller->checkIfUserVoted($url_key);
+
+if(isset($_POST['choice'])){
+	if($user_voted){
+		$already_voted = "You already voted!";
+	}
+	else{
+		$instance_controller->createVoteObject($_POST['choice'], $url_key);
+		$slv_instance = $home_controller->getSLVInstance($url_key);
+	}
+}
 
 $foo = 'bar';
 
@@ -53,17 +65,28 @@ $foo = 'bar';
 
 	<div id="Current" class="tabcontent content-current" <?= (is_int($slv_instance['id'])) ? "style='display: block;'" : "" ?>>
 		<h1>Super Lunch Vote Battle Results</h1>
+		<?= ($user_voted) ? "<h1>" . $already_voted : "";  ?>
 		<div class="current-results">
-			<div class="results-col results-option column-half">
-				<?php foreach($slv_instance['choices'] as $choice){ ?>
-				<div class="result" data-id="<?= $choice->id ?>"><?= $choice->name ?></div>
-				<?php } ?>
-			</div>
-			<div class="results-col results-count column-half">
-				<?php foreach($slv_instance['choices'] as $choice){ ?>
-					<div class="result" data-id="<?= $choice->id ?>">0</div>
-				<?php } ?>
-			</div>
+			<?php $i = 0; ?>
+			<?php foreach($slv_instance['choices'] as $choice){ ?>
+			<form method="post" name="choice-<?= $choice->id ?>">
+				<input type="hidden" name="url_key" value="<?= $url_key ?>">
+				<div class="choice">
+
+					<div class="results-col results-option column-half">
+						<div class="result" data-id="<?= $choice->id ?>"><?= $choice->name ?></div>
+						<input type="hidden" name="choice" value="<?= $choice->id ?>">
+					</div>
+
+					<div class="results-col results-count column-half">
+						<div class="result" data-id="<?= $choice->id ?>"><?= ($slv_instance['votes'][$i][0]->count != 0) ? $slv_instance['votes'][$i][0]->count : "0" ;?></div>
+					</div>
+					<input type="submit" class="vote-submit-button" value="Vote for this place!">
+				</div>
+			</form>
+				<?php $i++ ?>
+			<?php } ?>
+
 		</div>
 		<div class="results-share">
 			<h2 class="results-header">Invite friends to the battle with this link</h2>

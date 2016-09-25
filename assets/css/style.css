@@ -56,12 +56,41 @@ h1{
 /*
     RESULTS CSS
 */
+
+.choice{
+    border: 1px black solid;
+    padding: 10px;
+    margin: 10px;
+}
+
 .results-col{
-    display: inline-block;
+display: inline-block;
+    width: 40%;
 }
 
 .result{
     font-family: Arial;
+    font-size: 1.8em;
+    text-transform: uppercase;
+}
+
+.results-option > div{
+    float: left;
+}
+
+.results-count > div{
+    float: right;
+}
+
+.vote-submit-button{
+    clear: both;
+    padding: 5px 10px;
+    border: 1px black solid;
+    width:175px;
+    text-align: center;
+    margin: 10px auto;
+    font-size: 1rem;
+    display: block;
 }
 
 /*
