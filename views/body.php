@@ -65,7 +65,7 @@ $foo = 'bar';
 
 	<div id="Current" class="tabcontent content-current" <?= (is_int($slv_instance['id'])) ? "style='display: block;'" : "" ?>>
 		<h1>Super Lunch Vote Battle Results</h1>
-		<?= ($user_voted) ? "<h1>" . $already_voted : "";  ?>
+		<?= ($user_voted) ? "<h1>" . $already_voted . "</h1>": "";  ?>
 		<div class="current-results">
 			<?php $i = 0; ?>
 			<?php foreach($slv_instance['choices'] as $choice){ ?>

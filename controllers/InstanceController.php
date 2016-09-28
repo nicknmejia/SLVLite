@@ -28,10 +28,14 @@ class InstanceController{
 
 	public static function checkIfUserVoted($url_key){
 		$cookie_data = unserialize($_COOKIE['voted']);
+		if(in_array($url_key, $cookie_data['url_key'])){
+			$current_key_exists = true;
+		}
+
 		if(!$cookie_data){
 			return false;
 		}
-		elseif($cookie_data['user_ip'] == $_SERVER['REMOTE_ADDR'] && $cookie_data['url_key'] == $url_key){
+		elseif($cookie_data['user_ip'] == $_SERVER['REMOTE_ADDR'] && $current_key_exists){
 			return true;
 		}
 		else{
@@ -40,11 +44,17 @@ class InstanceController{
 	}
 
 	private function set_user_cookies($url_key){
-		$cookie_data = [
-			'user_ip'       => $_SERVER['REMOTE_ADDR'],
-			'voted'         => true,
-			'url_key'  => $url_key,
-		];
+		if(isset($_COOKIE['voted'])){
+			$cookie_data = unserialize($_COOKIE['voted']);
+			$cookie_data['url_key'][] = $url_key;
+		}
+		else{
+			$cookie_data = [
+				'user_ip'       => $_SERVER['REMOTE_ADDR'],
+				'voted'         => true,
+				'url_key'       => [$url_key],
+			];
+		}
 
 		setcookie('voted', serialize($cookie_data), time()+60*60*24*30);
 	}
