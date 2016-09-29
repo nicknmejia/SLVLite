@@ -91,18 +91,23 @@ $foo = 'bar';
 		<div class="results-share">
 			<h2 class="results-header">Invite friends to the battle with this link</h2>
 			<div class="url-container">
-				slvlite.dev/?slv=<?= $url_key ?>
+				<input onClick="this.setSelectionRange(0, this.value.length)" type="text" id="copyTarget" value="<?= $_SERVER['HTTP_HOST'] ?>/?slv=<?= $url_key ?>">
 			</div>
 		</div>
 	</div>
 
 
 	<div id="Social" class="tabcontent content-social">
+		<meta property="og:url"                content="<?= $_SERVER['HTTP_HOST'] ?>/?slv=<?= $url_key ?>" />
+		<meta property="og:type"               content="article" />
+		<meta property="og:title"              content="Super Lunch Vote Lite" />
+		<meta property="og:description"        content="Cast your vote for today's lunch!" />
+		<meta property="og:image"              content="https://baconmockup.com/470/300" />
 		<h1>Invite More People</h1>
 		<div class="icons">
-			<div class="icon" id="facebook">F</div>
-			<div class="icon" id="twitter">T</div>
-			<div class="icon" id="mail">M</div>
+			<a onclick="window.open('http://www.facebook.com/sharer.php?u=<?= $_SERVER['HTTP_HOST'] ?>/?slv=<?= $url_key ?>', 'newwindow', 'width=300, height=250'); return false;" href="#"><div class="icon" id="facebook"><img class="sm-icon" src="assets/img/facebook.svg"/></div></a>
+			<a onclick="window.open('http://twitter.com/home?status=http%3A//<?= $_SERVER['HTTP_HOST'] ?>/?slv=<?= $url_key ?>', 'newwindow', 'width=300, height=250'); return false;" href="#"><div class="icon" id="twitter"><img class="sm-icon" src="assets/img/twitter.svg"/></div></a>
+			<a href="mailto:someone@example.com?Subject=Hello%20again&body=You have been invited to the Super Lunch Vote lunch battle!  Click this link to place your vote for lunch: <?= $_SERVER['HTTP_HOST'] ?>/?slv=<?= $url_key ?>" target="_top"><div class="icon" id="mail"><img class="sm-icon" src="assets/img/envelope.svg"/></div></a>
 		</div>
 		<div class="slack">
 			<h2>Add Our Slack Extension</h2>

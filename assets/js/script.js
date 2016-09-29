@@ -1,3 +1,4 @@
+
 function tabToggle(evt, section) {
     // Declare all variables
     var i, tabcontent, tablinks;

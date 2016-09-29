@@ -18,7 +18,7 @@ class HomeController{
 
 	public function getURLKey(){
 		if(isset($_GET['slv']) || isset($_POST['slv'])){
-			return (isset($_GET['slv'])) ? $_GET['slv'] : $_POST['slv'] ;
+			return (isset($_POST['url_key'])) ? $_POST['slv'] : $_GET['slv'] ;
 		}
 		return false;
 	}
