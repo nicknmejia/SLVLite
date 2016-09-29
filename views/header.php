@@ -5,6 +5,11 @@
 <head>
 	<title>Super Lunch Vote Lite</title>
 	<link rel="stylesheet" href="assets/css/style.css">
+	<meta property="og:url"                content="<?= $_SERVER['HTTP_HOST'] ?>/?slv=<?= $url_key ?>" />
+	<meta property="og:type"               content="article" />
+	<meta property="og:title"              content="Super Lunch Vote Lite" />
+	<meta property="og:description"        content="Cast your vote for today's lunch!" />
+	<meta property="og:image"              content="https://baconmockup.com/470/300" />
 </head>
 
 <body>

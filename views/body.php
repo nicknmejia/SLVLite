@@ -98,11 +98,6 @@ $foo = 'bar';
 
 
 	<div id="Social" class="tabcontent content-social">
-		<meta property="og:url"                content="<?= $_SERVER['HTTP_HOST'] ?>/?slv=<?= $url_key ?>" />
-		<meta property="og:type"               content="article" />
-		<meta property="og:title"              content="Super Lunch Vote Lite" />
-		<meta property="og:description"        content="Cast your vote for today's lunch!" />
-		<meta property="og:image"              content="https://baconmockup.com/470/300" />
 		<h1>Invite More People</h1>
 		<div class="icons">
 			<a onclick="window.open('http://www.facebook.com/sharer.php?u=<?= $_SERVER['HTTP_HOST'] ?>/?slv=<?= $url_key ?>', 'newwindow', 'width=300, height=250'); return false;" href="#"><div class="icon" id="facebook"><img class="sm-icon" src="assets/img/facebook.svg"/></div></a>
