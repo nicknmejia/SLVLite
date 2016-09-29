@@ -9,7 +9,7 @@
 	<meta property="og:type"               content="article" />
 	<meta property="og:title"              content="Super Lunch Vote Lite" />
 	<meta property="og:description"        content="Cast your vote for today's lunch!" />
-	<meta property="og:image"              content="https://baconmockup.com/470/300" />
+	<meta property="og:image"              content="https://baconmockup.com/300/300" />
 </head>
 
 <body>
