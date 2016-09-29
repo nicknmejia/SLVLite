@@ -32,12 +32,12 @@ class VotingController{
 			) );
 			return $vote->save();
 		}
-		if($vote_exists->count == null){
+		if($vote_exists[0]->count == null){
 			return false;
 		}
-		$new_count = $vote_exists->count + 1;
-		$vote_exists->count = $new_count;
-		$vote_exists->save();
+		$new_count = $vote_exists[0]->count + 1;
+		$vote_exists[0]->count = $new_count;
+		$vote_exists[0]->save();
 	}
 
 	public static function removeVote($choice_id){
