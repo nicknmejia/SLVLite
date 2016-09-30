@@ -6,6 +6,10 @@
     text-transform: uppercase;
 }
 
+.no-js{
+    display: block !important;
+}
+
 .body p, .body h1, .body h2, .body h3, .body div, .footer h4, .option-submit-button{
     color: white;
 }
@@ -18,7 +22,7 @@
 }
 
 .title-slv{
-    font-size: 70px;
+    font-size: 5rem;
     margin-bottom: 0;
 }
 
@@ -30,7 +34,6 @@
 
 .title-quote{
     margin-top: 5px;
-    font-size: 18px;
 }
 
 hr{
@@ -47,17 +50,42 @@ hr{
     display: inline-block;
 }
 
+.navigation-button{
+    padding: 5px;
+    color: white;
+    background-color: #44D9E6;
+    transition: background-color 0.2s, color 0.2s linear;
+}
+
+.navigation-button:hover{
+    background-color: white;
+    color: black;
+}
+
+.navigation-button-left{
+    border-radius: 8px 0 0 8px;
+}
+.navigation-button-right{
+    border-radius: 0 8px 8px 0;
+}
+
 .option-add-button, .option-submit-button{
     padding: 10px 20px;
-    border: 1px black solid;
+    background-color: #44D9E6;
+    border-radius: 5px;
     width:250px;
     text-align: center;
-    margin: 30px auto;
-    font-size: 1rem;
+    margin: 20px auto;
+    border: 1px #44D9E6 solid;
+    font-weight:bold;
+    font-size: 1.1em;
+    transition: background-color 0.2s, color 0.2s linear;
 }
 
 .option-add-button:hover, .option-submit-button:hover{
     cursor: pointer;
+    background-color: white;
+    color: black;
 }
 
 /*
@@ -77,14 +105,41 @@ hr{
 
 }
 
-.content-new-option > input{
+.content-new-option > input, #copyTarget{
     display: block;
     text-align: center;
     margin: auto;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    height: 40px;
+    width: 70%;
+    font-size: 2em;
+    font-weight: 900;
+    border-style: none;
+}
+
+#copyTarget{
+    text-transform: none;
 }
 
 .num-1, .num-2, .num-3{
-    font-size: 50px;
+    font-size: 5rem !important;
+}
+
+.input-option{
+    display: block;
+    text-align: right;
+    margin-right: 10%;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.content-submit{
+    margin-bottom: 50px;
+}
+
+.no-js-button{
+    display: none;
 }
 
 /*
@@ -92,9 +147,14 @@ hr{
 */
 
 .choice{
-    border: 1px black solid;
     padding: 10px;
-    margin: 10px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: white;
+    height:100px;
+    width: 70%;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .results-col{
@@ -102,10 +162,16 @@ display: inline-block;
     width: 40%;
 }
 
+.results-share h5{
+    margin: 0 0;
+}
+
 .result{
     font-family: Arial;
     font-size: 1.8em;
     text-transform: uppercase;
+    color: black !important;
+    font-weight: 900;
 }
 
 .results-option > div{
@@ -151,9 +217,156 @@ display: inline-block;
 #facebook{
     background-color: dodgerblue;
 }
+
 #twitter{
     background-color: cornflowerblue;
 }
 #mail{
     background-color: firebrick;
+}
+
+/*
+Fancy Checkboxes!
+*/
+
+
+/* Checkmark style starts */
+@-moz-keyframes dothabottomcheck {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 25px;
+    }
+}
+@-webkit-keyframes dothabottomcheck {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 25px;
+    }
+}
+@keyframes dothabottomcheck {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 25px;
+    }
+}
+@keyframes dothatopcheck {
+    0% {
+        height: 0;
+    }
+    50% {
+        height: 0;
+    }
+    100% {
+        height: 60px;
+    }
+}
+@-webkit-keyframes dothatopcheck {
+    0% {
+        height: 0;
+    }
+    50% {
+        height: 0;
+    }
+    100% {
+        height: 60px;
+    }
+}
+@-moz-keyframes dothatopcheck {
+    0% {
+        height: 0;
+    }
+    50% {
+        height: 0;
+    }
+    100% {
+        height: 60px;
+    }
+}
+input[type=checkbox] {
+    display: none;
+}
+
+.check-box {
+    margin-bottom: -2px;
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    border: 10px solid #000;
+    border-radius: 5px;
+    position: relative;
+    display: inline-block;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-transition: border-color ease 0.2s;
+    -o-transition: border-color ease 0.2s;
+    -webkit-transition: border-color ease 0.2s;
+    transition: border-color ease 0.2s;
+    cursor: pointer;
+}
+.check-box::before, .check-box::after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    height: 0;
+    width: 15px;
+    background-color: white;
+    display: inline-block;
+    -moz-transform-origin: left top;
+    -ms-transform-origin: left top;
+    -o-transform-origin: left top;
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    border-radius: 5px;
+    content: ' ';
+    -webkit-transition: opacity ease .5;
+    -moz-transition: opacity ease .5;
+    transition: opacity ease .5;
+}
+.check-box::before {
+    top: 30px;
+    left: 20px;
+
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+.check-box::after {
+    top: 12px;
+    left: 2px;
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+input[type=checkbox]:checked + .check-box,
+.check-box.checked {
+    border-color: white;
+}
+input[type=checkbox]:checked + .check-box::after,
+.check-box.checked::after {
+    height: 50px;
+    -moz-animation: dothabottomcheck 0.2s ease 0s forwards;
+    -o-animation: dothabottomcheck 0.2s ease 0s forwards;
+    -webkit-animation: dothabottomcheck 0.2s ease 0s forwards;
+    animation: dothabottomcheck 0.2s ease 0s forwards;
+}
+input[type=checkbox]:checked + .check-box::before,
+.check-box.checked::before {
+    height: 120px;
+    -moz-animation: dothatopcheck 0.4s ease 0s forwards;
+    -o-animation: dothatopcheck 0.4s ease 0s forwards;
+    -webkit-animation: dothatopcheck 0.4s ease 0s forwards;
+    animation: dothatopcheck 0.4s ease 0s forwards;
 }

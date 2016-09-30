@@ -31,3 +31,4 @@ function addOption(){
 
     document.getElementById('options').appendChild(newInput);
 }
+

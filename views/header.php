@@ -23,13 +23,13 @@
 			<hr noshade/>
 			<div class="navigation">
 				<div class="new-vote tablinks" onclick="tabToggle(event, 'New')">
-					<h2 class="nav-button-header slv-header">New Poll | </h2>
+					<h2 class="navigation-button navigation-button-left slv-header">New Poll</h2>
 				</div>
 				<div class="current-vote tablinks" onclick="tabToggle(event, 'Current')">
-					<h2 class="nav-button-header slv-header">Current Poll | </h2>
+					<h2 class="navigation-button slv-header">Current Poll</h2>
 				</div>
 				<div class="social-media tablinks" onclick="tabToggle(event, 'Social')">
-					<h2 class="nav-button-header slv-header">Share</h2>
+					<h2 class="navigation-button navigation-button-right slv-header">Share</h2>
 				</div>
 			</div>
 		</div>
