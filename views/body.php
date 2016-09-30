@@ -33,7 +33,7 @@ $foo = 'bar';
 	<div id="New" class="tabcontent content-new" <?= (!is_int($slv_instance['id'])) ? "style='display: block;'" : "" ?>>
 		<form method="post" name="new-poll">
 			<div class="content-new-option" id="options">
-				<h2 class="new-option-headers">1. Choose your options!</h2>
+				<h2 class="new-option-headers"><span class="num-1">1.</span> Add Some Places to Eat</h2>
 				<input name="choice1" data-slot="1" type="text" placeholder="Chipotle">
 				<input name="choice2" data-slot="2" type="text" placeholder="Del Taco">
 			</div>
@@ -42,7 +42,7 @@ $foo = 'bar';
 			</div>
 
 			<div class="content-customize">
-				<h2 class="new-option-headers">2. Customize it!</h2>
+				<h2 class="new-option-headers"><span class="num-2">2.</span> Mod your lunchvote</h2>
 				<div class="options-col-1">
 					<input name="downvote" type="checkbox"> Allow Downvote
 					<input name="add-options" type="checkbox"> Allow Adding Options
@@ -56,7 +56,7 @@ $foo = 'bar';
 			</div>
 
 			<div class="content-submit">
-				<h2 class="new-option-headers">3. Jam the Vote!</h2>
+				<h2 class="new-option-headers"><span class="num-3">3.</span> Jam the Vote!</h2>
 				<input type="submit" class="option-submit-button" value="Create Your Super Lunch Vote!">
 			</div>
 		</form>

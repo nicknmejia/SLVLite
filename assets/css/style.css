@@ -1,32 +1,41 @@
 /*
     BASE CSS STYLES
 */
-
-h1{
+*{
+    font-family: 'Helvetica', sans-serif;
     text-transform: uppercase;
+}
+
+.body p, .body h1, .body h2, .body h3, .body div, .footer h4, .option-submit-button{
+    color: white;
 }
 
 .container{
     max-width: 1000px;
-}
-
-.titles{
-    background-color: black;
-    color: white;
+    background-color: #FC423A;
+    padding-top: 50px;
+    padding-bottom: 80px;
 }
 
 .title-slv{
-    font-family: 'Impact', sans-serif !important;
-    font-size: 3em;
+    font-size: 70px;
     margin-bottom: 0;
 }
 
 .title-lite{
     margin-top: 0;
+    margin-bottom: 0;
+    letter-spacing: 10px;
 }
 
-.slv-header{
-    font-family: 'Arial', sans-serif;
+.title-quote{
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+hr{
+    border: 10px solid black;
+    width: 900px;
 }
 
 .center{
@@ -62,10 +71,20 @@ h1{
     NEW POLL CSS
 */
 
+.new-option-headers{
+    text-align: left;
+    margin-left:10%;
+
+}
+
 .content-new-option > input{
     display: block;
     text-align: center;
     margin: auto;
+}
+
+.num-1, .num-2, .num-3{
+    font-size: 50px;
 }
 
 /*

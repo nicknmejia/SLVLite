@@ -20,6 +20,7 @@
 				<h1 class="title-lite slv-header">Lite</h1>
 				<h2 class="title-quote slv-header">"<?= $quote ?>"</h2>
 			</div>
+			<hr noshade/>
 			<div class="navigation">
 				<div class="new-vote tablinks" onclick="tabToggle(event, 'New')">
 					<h2 class="nav-button-header slv-header">New Poll | </h2>
