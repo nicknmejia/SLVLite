@@ -60,6 +60,7 @@ hr{
 .navigation-button:hover{
     background-color: white;
     color: black;
+    cursor: pointer;
 }
 
 .navigation-button-left{
