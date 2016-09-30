@@ -44,34 +44,34 @@ $foo = 'bar';
 				+ Add More
 			</div>
 
-			<div class="content-customize">
-				<h2 class="new-option-headers"><span class="num-2">2.</span> Mod your lunchvote</h2>
-				<div class="options-col-1">
-					<div class="input-option">
-						5 Min Time Limit
-						<input name="time-limit" type="checkbox" id="cb1" />
-						<label for="cb1" class="check-box"></label>
-					</div>
-					<div class="input-option">
-						Downvoting Allowed
-						<input name="downvote" type="checkbox" id="cb2" />
-						<label for="cb2" class="check-box"></label>
-					</div>
-					<div class="input-option">
-						Vote Changing Allowed
-						<input name="changes" type="checkbox" id="cb3" />
-						<label for="cb3" class="check-box"></label>
-					</div>
-				</div>
+<!--			<div class="content-customize">-->
+<!--				<h2 class="new-option-headers"><span class="num-2">2.</span> Mod your lunchvote</h2>-->
+<!--				<div class="options-col-1">-->
+<!--					<div class="input-option">-->
+<!--						5 Min Time Limit-->
+<!--						<input name="time-limit" type="checkbox" id="cb1" />-->
+<!--						<label for="cb1" class="check-box"></label>-->
+<!--					</div>-->
+<!--					<div class="input-option">-->
+<!--						Downvoting Allowed-->
+<!--						<input name="downvote" type="checkbox" id="cb2" />-->
+<!--						<label for="cb2" class="check-box"></label>-->
+<!--					</div>-->
+<!--					<div class="input-option">-->
+<!--						Vote Changing Allowed-->
+<!--						<input name="changes" type="checkbox" id="cb3" />-->
+<!--						<label for="cb3" class="check-box"></label>-->
+<!--					</div>-->
+<!--				</div>-->
 <!--				<div class="options-col-2">-->
 <!--					<input name="time-limit" type="checkbox"> 5 Minute Limit-->
 <!--					<input name="wildcards" type="checkbox"> Add Wildcards-->
 <!--					<input name="changes" type="checkbox"> Allow Vote Changes-->
 <!--				</div>-->
-			</div>
+<!--			</div>-->
 
 			<div class="content-submit">
-				<h2 class="new-option-headers"><span class="num-3">3.</span> Create your super lunch vote</h2>
+				<h2 class="new-option-headers"><span class="num-3">2.</span> Create your super lunch vote</h2>
 				<input type="submit" class="option-submit-button" value="Jam the Vote">
 			</div>
 		</form>
@@ -120,10 +120,10 @@ $foo = 'bar';
 			<a onclick="window.open('http://twitter.com/home?status=http%3A//<?= $_SERVER['HTTP_HOST'] ?>/?slv=<?= $url_key ?>', 'newwindow', 'width=300, height=250'); return false;" href="#"><div class="icon" id="twitter"><img class="sm-icon" src="assets/img/twitter.svg"/></div></a>
 			<a href="mailto:someone@example.com?Subject=Hello%20again&body=You have been invited to the Super Lunch Vote lunch battle!  Click this link to place your vote for lunch: <?= $_SERVER['HTTP_HOST'] ?>/?slv=<?= $url_key ?>" target="_top"><div class="icon" id="mail"><img class="sm-icon" src="assets/img/envelope.svg"/></div></a>
 		</div>
-		<div class="slack">
-			<h2>Add Our Slack Extension</h2>
-			<div class="slack-icon"></div>
-		</div>
+<!--		<div class="slack">-->
+<!--			<h2>Add Our Slack Extension</h2>-->
+<!--			<div class="slack-icon"></div>-->
+<!--		</div>-->
 	</div>
 </div>
 
